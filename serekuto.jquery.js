@@ -165,7 +165,6 @@
 								$.data( this, "plugin_" + pluginName, new Plugin( this, options ) );
 						}
 				});
-
 				return this;
 		};
 
