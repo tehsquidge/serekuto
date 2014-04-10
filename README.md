@@ -20,7 +20,11 @@ Options
 ========
 
 **placeholderText** - html5 placeholder text
-
+```
+$(select#my-list').serekuto({
+  placeholderText: "Select a Country..."
+});
+```
 **calculatePosition** - callback for customizing the position of the dropdown. return {top: x, left: y}. You can use this.searchBox to position from. Example:
 ```
 $(select#my-list').serekuto({
