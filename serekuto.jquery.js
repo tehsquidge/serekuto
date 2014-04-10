@@ -31,11 +31,11 @@
 					var el = $(this.element);
 					el.hide();
 					this.searchBox = $('<input>', { "class": "serekuto", "id": el.attr('id') + "_serekuto", "placeholder": this.settings.placeholderText });
+					this.searchBox.bind("propertychange",$.proxy(this.search,this));
 					this.searchBox.bind("input",$.proxy(this.search,this));
 					this.searchBox.bind("keydown",$.proxy(this.keyDown,this));
 					this.searchBox.bind('focusout',$.proxy(this.focusOut, this));
 					el.after(this.searchBox);
-
 				},
 				_pregQuote: function( str ) {
 				    return (str+'').replace(/([\\\.\+\*\?\[\^\]\$\(\)\{\}\=\!\<\>\|\:])/g, "\\$1");
