@@ -44,7 +44,14 @@
 					var pregQuote = this._pregQuote;
 					var text = $(item).text();
 					var tags = $(item).attr("data-tags")? $(item).attr("data-tags") : "";
-					if( (text.toLowerCase().indexOf(term.toLowerCase()) != -1 || tags.toLowerCase().indexOf(term.toLowerCase()) != -1 ) && term != ""){
+                    var parentText = $(item).parent('optgroup').attr('label');
+                    var parentTags = $(item).parent('optgroup').attr("data-tags")? $(item).parent('optgroup').attr("data-tags") : "";
+					if( (
+                        text.toLowerCase().indexOf(term.toLowerCase()) != -1
+                        || parentText.toLowerCase().indexOf(term.toLowerCase()) != -1
+                        || tags.toLowerCase().indexOf(term.toLowerCase()) != -1
+                        || parentTags.toLowerCase().indexOf(term.toLowerCase()) != -1
+                        ) && term != ""){
 						var result = $('<div>', {"class":"resultItem", "data-value": $(item).val(), "data-text": text });
 						result.html(text.replace(new RegExp( "(" + pregQuote( term ) + ")" , 'gi' ),"<strong>$1</strong>"));
 						var _self = this;

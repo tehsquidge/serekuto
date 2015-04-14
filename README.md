@@ -10,10 +10,10 @@ Usage
 $(select#my-list').serekuto();
 ```
 
-the plugin will search two places - the text with the option and data-tags attribute. Example:
+the plugin will search four places - the text and data-tags attribute of options and optgroups. Matching optgroups will include all there children options. Example:
 
 ```
-<option value="GB" data-tags="Scotland,England,Wales,Northern Ireland">United Kingdon</option>
+<option value="GB" data-tags="Scotland,England,Wales,Northern Ireland">United Kingdom</option>
 ```
 
 Options
