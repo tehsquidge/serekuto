@@ -4,6 +4,7 @@
 		defaults = {
 				containerName: "serekutoResults",
 				calculatePosition: function(){ return this.calculatePosition(); },
+                onSelectionComplete: function(el){ },
 				placeholderText: ""
 		};
 
@@ -156,6 +157,7 @@
 						this.searchBox.val("");
 						$(this.element).find("option").attr("selected",false);
 					}
+                    this.settings.onSelectionComplete($(this.element));
 					container.removeClass("hover");
 					container.hide();
 				},

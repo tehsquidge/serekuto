@@ -238,7 +238,7 @@
 		    <option value="UA" label="Ukraine">Ukraine</option>
 		    <option value="SU" data-tags="USSR" label="Union of Soviet Socialist Republics">Union of Soviet Socialist Republics</option>
 		    <option value="GB" data-tags="Scotland,England,Wales,Northern Ireland" label="United Kingdom">United Kingdom</option>
-		    <option value="VA" label="Vatican City">Vatican City</option>
+		    <option value="VA" data-tags="fish and chips" label="Vatican City">Vatican City</option>
 		    <option value="AX" label="Åland Islands">Åland Islands</option>
 		    </optgroup>
 		    <optgroup id="country-optgroup-Oceania" label="Oceania">
@@ -281,7 +281,10 @@
 		<input type="submit">
 		</form>
 		<script type="text/javascript">
-			$('#country').serekuto({ placeholderText: "pick a country" });
+			$('#country').serekuto({
+                placeholderText: "pick a country",
+                onSelectionComplete: function(el){ console.log(el.find(':selected').first()); }
+            });
 		</script>
 	</body>
 </html>
