@@ -44,7 +44,7 @@
 					var pregQuote = this._pregQuote;
 					var text = $(item).text();
 					var tags = $(item).attr("data-tags")? $(item).attr("data-tags") : "";
-                    var parentText = $(item).parent('optgroup').attr('label');
+                    var parentText = $(item).parent('optgroup').attr('label')? $(item).parent('optgroup').attr('label') : "";
                     var parentTags = $(item).parent('optgroup').attr("data-tags")? $(item).parent('optgroup').attr("data-tags") : "";
 					if( (
                         text.toLowerCase().indexOf(term.toLowerCase()) != -1
