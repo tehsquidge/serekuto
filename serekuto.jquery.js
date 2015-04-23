@@ -31,7 +31,7 @@
 		            this.container.bind("mouseup", $.proxy(function() { this.searchBox.focus(); },this) );
 					var el = $(this.element);
 					el.hide();
-					this.searchBox = $('<input>', { "class": "serekuto", "id": el.attr('id') + "_serekuto", "placeholder": this.settings.placeholderText });
+					this.searchBox = $('<input>', { "class": "serekuto", "id": el.attr('id') + "_serekuto", "placeholder": this.settings.placeholderText, "autocomplete" : "off" });
 					this.searchBox.bind("propertychange",$.proxy(this.search,this));
 					this.searchBox.bind("input",$.proxy(this.search,this));
 					this.searchBox.bind("keydown",$.proxy(this.keyDown,this));
@@ -99,6 +99,11 @@
 					}else{
 						container.show();
 						container.offset($.proxy(this.settings.calculatePosition,this));
+                        var activeItem = $('#'+this.settings.containerName+ " .resultItem.active");
+						if(activeItem.length == 0){
+							activeItem = $('#'+this.settings.containerName+ " .resultItem").first();
+							activeItem.addClass('active');
+                        }
 					}
 
 				},
